@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell.exe:*)",
+      "WebFetch(domain:nomads.com)",
+      "Bash(npx playwright:*)",
+      "Bash(npm install -g @playwright/test 2>&1 && npx playwright install chromium 2>&1)",
+      "mcp__playwright__browser_install",
+      "Bash(tail:*)",
+      "Bash(cd /c/Users/sk10494/Desktop/VibeCoding/New/K_Nomads && npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack --yes 2>&1)",
+      "Bash(cd /c/Users/sk10494/Desktop/VibeCoding/New/K_Nomads && npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack --yes --name k-nomads 2>&1)",
+      "Bash(cd /c/Users/sk10494/Desktop/VibeCoding/New/K_Nomads && npm install 2>&1)",
+      "Bash(cd /c/Users/sk10494/Desktop/VibeCoding/New/K_Nomads && npm run build 2>&1)",
+      "mcp__playwright__browser_wait_for",
+      "Bash(curl:*)",
+      "Bash(dir C:\\\\Users\\\\sk10494\\\\Desktop\\\\VibeCoding\\\\New\\\\K_Nomads\\\\src:*)"
+    ]
+  }
+}
