@@ -32,23 +32,21 @@ export default function QuickFilterBar() {
             <span className="text-xs font-medium text-slate-500 w-16 shrink-0">
               {filter.label}
             </span>
-            <div className="overflow-x-auto">
-              <div className="flex flex-nowrap gap-1">
-                {filter.options.map((option) => (
-                  <button
-                    key={option}
-                    onClick={() => setters[i](option)}
-                    className={cn(
-                      "px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-colors",
-                      activeValues[i] === option
-                        ? "bg-slate-800 text-white"
-                        : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                    )}
-                  >
-                    {option}
-                  </button>
-                ))}
-              </div>
+            <div className="flex w-full gap-1">
+              {filter.options.map((option) => (
+                <button
+                  key={option}
+                  onClick={() => setters[i](option)}
+                  className={cn(
+                    "flex-1 py-1.5 rounded-full text-sm font-medium text-center transition-colors",
+                    activeValues[i] === option
+                      ? "bg-slate-800 text-white"
+                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  )}
+                >
+                  {option}
+                </button>
+              ))}
             </div>
           </div>
         ))}
