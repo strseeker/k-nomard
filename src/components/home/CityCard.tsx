@@ -52,8 +52,9 @@ export default function CityCard({ city }: CityCardProps) {
       {/* 이미지 영역 */}
       <div className="relative h-44 bg-gradient-to-br from-slate-300 to-slate-400 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/50 to-slate-400" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-white/60 text-4xl font-bold">{city.name.charAt(0)}</span>
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-1">
+          <span className="text-white font-bold text-xl drop-shadow">{city.name}</span>
+          <span className="text-white/80 text-xs">{city.tagline}</span>
         </div>
         {city.badge && (
           <div className="absolute top-3 left-3">
@@ -66,39 +67,34 @@ export default function CityCard({ city }: CityCardProps) {
 
       {/* 콘텐츠 */}
       <div className="flex flex-col p-4">
-        {/* 도시명 + 좋아요/싫어요 */}
-        <div className="flex items-start justify-between mb-3">
-          <div>
-            <h3 className="font-bold text-slate-900 text-base">{city.name}</h3>
-          </div>
-          <div className="flex items-center gap-3">
-            <button
-              onClick={handleLike}
-              className="flex items-center gap-1"
-              aria-label="좋아요"
-            >
-              <ThumbsUp
-                className={cn(
-                  "h-4 w-4 transition-colors",
-                  liked ? "text-emerald-500 fill-emerald-500" : "text-slate-400"
-                )}
-              />
-              <span className="text-xs text-slate-500">{likeCount}</span>
-            </button>
-            <button
-              onClick={handleDislike}
-              className="flex items-center gap-1"
-              aria-label="싫어요"
-            >
-              <ThumbsDown
-                className={cn(
-                  "h-4 w-4 transition-colors",
-                  disliked ? "text-rose-500 fill-rose-500" : "text-slate-400"
-                )}
-              />
-              <span className="text-xs text-slate-500">{dislikeCount}</span>
-            </button>
-          </div>
+        {/* 좋아요/싫어요 */}
+        <div className="flex items-center justify-between mb-3">
+          <button
+            onClick={handleLike}
+            className="flex items-center gap-1"
+            aria-label="좋아요"
+          >
+            <ThumbsUp
+              className={cn(
+                "h-4 w-4 transition-colors",
+                liked ? "text-emerald-500 fill-emerald-500" : "text-slate-400"
+              )}
+            />
+            <span className="text-xs text-slate-500">{likeCount}</span>
+          </button>
+          <button
+            onClick={handleDislike}
+            className="flex items-center gap-1"
+            aria-label="싫어요"
+          >
+            <span className="text-xs text-slate-500">{dislikeCount}</span>
+            <ThumbsDown
+              className={cn(
+                "h-4 w-4 transition-colors",
+                disliked ? "text-rose-500 fill-rose-500" : "text-slate-400"
+              )}
+            />
+          </button>
         </div>
 
         {/* Key-Value 정보 그리드 */}

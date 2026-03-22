@@ -8,6 +8,7 @@ export type SeasonType = "봄" | "여름" | "가을" | "겨울"
 export type City = {
   id: string
   name: string
+  tagline: string
   budget: BudgetType
   region: RegionType
   environment: EnvironmentType[]
@@ -24,6 +25,7 @@ export const cities: City[] = [
   {
     id: "jeju",
     name: "제주시",
+    tagline: "섬이 주는 자유",
     budget: "100~200만원",
     region: "제주도",
     environment: ["자연친화", "카페작업"],
@@ -37,6 +39,7 @@ export const cities: City[] = [
   {
     id: "seoul",
     name: "서울",
+    tagline: "모든 것이 가능한 도시",
     budget: "200만원 이상",
     region: "수도권",
     environment: ["도심선호", "코워킹 필수"],
@@ -50,6 +53,7 @@ export const cities: City[] = [
   {
     id: "busan",
     name: "부산",
+    tagline: "파도처럼 역동적인 도시",
     budget: "100~200만원",
     region: "경상도",
     environment: ["도심선호", "코워킹 필수", "자연친화"],
@@ -63,6 +67,7 @@ export const cities: City[] = [
   {
     id: "gangneung",
     name: "강릉",
+    tagline: "커피향 가득한 바닷가",
     budget: "100만원 이하",
     region: "강원도",
     environment: ["자연친화", "카페작업"],
@@ -75,6 +80,7 @@ export const cities: City[] = [
   {
     id: "seogwipo",
     name: "서귀포",
+    tagline: "느리게 살기 좋은 남쪽",
     budget: "100~200만원",
     region: "제주도",
     environment: ["자연친화"],
@@ -87,6 +93,7 @@ export const cities: City[] = [
   {
     id: "daejeon",
     name: "대전",
+    tagline: "과학과 교통의 중심",
     budget: "100만원 이하",
     region: "충청도",
     environment: ["도심선호", "코워킹 필수"],
@@ -99,6 +106,7 @@ export const cities: City[] = [
   {
     id: "jeonju",
     name: "전주",
+    tagline: "한옥 속 슬로우 라이프",
     budget: "100만원 이하",
     region: "전라도",
     environment: ["카페작업", "자연친화"],
@@ -111,6 +119,7 @@ export const cities: City[] = [
   {
     id: "chuncheon",
     name: "춘천",
+    tagline: "호수와 낭만의 도시",
     budget: "100만원 이하",
     region: "강원도",
     environment: ["자연친화"],
@@ -123,6 +132,7 @@ export const cities: City[] = [
   {
     id: "gwangju",
     name: "광주",
+    tagline: "예술과 맛의 수도",
     budget: "100만원 이하",
     region: "전라도",
     environment: ["도심선호", "카페작업"],
@@ -135,6 +145,7 @@ export const cities: City[] = [
   {
     id: "sokcho",
     name: "속초",
+    tagline: "산과 바다가 만나는 곳",
     budget: "100만원 이하",
     region: "강원도",
     environment: ["자연친화"],
@@ -147,6 +158,7 @@ export const cities: City[] = [
   {
     id: "gyeongju",
     name: "경주",
+    tagline: "천년의 고도",
     budget: "100만원 이하",
     region: "경상도",
     environment: ["자연친화", "카페작업"],
@@ -159,6 +171,7 @@ export const cities: City[] = [
   {
     id: "daegu",
     name: "대구",
+    tagline: "패션과 열정의 도시",
     budget: "100만원 이하",
     region: "경상도",
     environment: ["도심선호"],
@@ -171,6 +184,7 @@ export const cities: City[] = [
   {
     id: "yeosu",
     name: "여수",
+    tagline: "밤바다의 낭만",
     budget: "100만원 이하",
     region: "전라도",
     environment: ["자연친화", "카페작업"],
@@ -183,6 +197,7 @@ export const cities: City[] = [
   {
     id: "cheongju",
     name: "청주",
+    tagline: "실용적인 중부의 거점",
     budget: "100만원 이하",
     region: "충청도",
     environment: ["도심선호", "코워킹 필수"],
