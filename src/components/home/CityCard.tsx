@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { ThumbsUp, ThumbsDown } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
@@ -16,7 +17,8 @@ export default function CityCard({ city }: CityCardProps) {
   const [likeCount, setLikeCount] = useState(city.likes)
   const [dislikeCount, setDislikeCount] = useState(city.dislikes)
 
-  const handleLike = () => {
+  const handleLike = (e: React.MouseEvent) => {
+    e.stopPropagation()
     if (liked) {
       setLiked(false)
       setLikeCount((c) => c - 1)
@@ -30,7 +32,8 @@ export default function CityCard({ city }: CityCardProps) {
     }
   }
 
-  const handleDislike = () => {
+  const handleDislike = (e: React.MouseEvent) => {
+    e.stopPropagation()
     if (disliked) {
       setDisliked(false)
       setDislikeCount((c) => c - 1)
@@ -45,7 +48,7 @@ export default function CityCard({ city }: CityCardProps) {
   }
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+    <Link href={`/cities/${city.id}`} className="block rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       {/* 이미지 영역 */}
       <div className="relative h-44 bg-gradient-to-br from-slate-300 to-slate-400 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/50 to-slate-400" />
@@ -138,6 +141,6 @@ export default function CityCard({ city }: CityCardProps) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
