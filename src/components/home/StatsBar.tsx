@@ -1,6 +1,6 @@
 const stats = [
   { value: "14개", label: "등록 도시", sub: "전국 주요 노마드 거점" },
-  { value: "1,240개", label: "누적 리뷰", sub: "실제 거주자 후기" },
+  { value: "2,100개", label: "총 좋아요", sub: "도시별 노마드 추천" },
   { value: "3,800명", label: "월간 방문자", sub: "노마드 커뮤니티" },
 ]
 

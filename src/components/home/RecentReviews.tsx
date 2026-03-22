@@ -1,4 +1,4 @@
-import { Star, ThumbsUp, ThumbsDown } from "lucide-react"
+import { ThumbsUp, ThumbsDown } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
 const reviews = [
@@ -6,7 +6,6 @@ const reviews = [
     id: 1,
     nickname: "nomad_jeju",
     city: "제주시",
-    rating: 5,
     date: "2026.03.15",
     content:
       "제주 애월 카페 골목에서 한 달 살기를 했는데, 인터넷 속도가 생각보다 훨씬 빠르고 카페마다 콘센트가 많아서 작업하기 최고였어요. 다만 교통은 차가 없으면 좀 불편합니다.",
@@ -18,7 +17,6 @@ const reviews = [
     id: 2,
     nickname: "digital_busan",
     city: "부산",
-    rating: 4,
     date: "2026.03.12",
     content:
       "해운대 인근 코워킹 스페이스가 생각보다 많고, 가격도 서울보다 저렴해요. 바다 보면서 일하는 감성은 진짜 최고입니다. 커뮤니티도 활발하게 운영 중!",
@@ -30,7 +28,6 @@ const reviews = [
     id: 3,
     nickname: "jeonju_lover",
     city: "전주",
-    rating: 4,
     date: "2026.03.10",
     content:
       "전주 한옥마을 근처에서 한 달 살았는데 생활비가 정말 저렴해요. 맛집도 많고 분위기도 좋아서 집중이 잘 됩니다. 다만 코워킹 스페이스 선택지가 적어요.",
@@ -42,7 +39,6 @@ const reviews = [
     id: 4,
     nickname: "gangneung_coder",
     city: "강릉",
-    rating: 5,
     date: "2026.03.08",
     content:
       "강릉 커피거리 + 바다 조합은 진짜 최고입니다. 서핑 배우면서 오전에 작업하고 오후엔 바다... 이게 노마드 생활이지. 성수기엔 숙소 가격이 좀 올라가는 게 단점.",
@@ -51,21 +47,6 @@ const reviews = [
     dislikes: 3,
   },
 ]
-
-function StarRating({ rating }: { rating: number }) {
-  return (
-    <div className="flex items-center gap-0.5">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star
-          key={i}
-          className={`h-3.5 w-3.5 ${
-            i < rating ? "fill-amber-400 text-amber-400" : "fill-slate-200 text-slate-200"
-          }`}
-        />
-      ))}
-    </div>
-  )
-}
 
 export default function RecentReviews() {
   return (
@@ -110,7 +91,6 @@ export default function RecentReviews() {
                     </div>
                   </div>
                 </div>
-                <StarRating rating={review.rating} />
               </div>
 
               {/* 본문 */}
